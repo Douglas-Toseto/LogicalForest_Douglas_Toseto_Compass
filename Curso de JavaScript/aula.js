@@ -5,6 +5,8 @@ var peso = 65.5
 console.log('Olá, meu nome é '+ nome + ', tenho '+idade+' e peso '+peso+' kg.')
 */
 
+// ----------------------------------------------------------------------------------------------------------------------------------------
+
 /* //mini projeto 1 - trocar valor de variáveis
 let a = 'vermelho';
 let b = 'azul';
@@ -15,6 +17,8 @@ b = temp;
 console.log(a);
 console.log(b);
 */
+
+// ----------------------------------------------------------------------------------------------------------------------------------------
 
 /* //mini projeto 2 - função para máximo entre dois valores
 function numMaior(n1,n2){
@@ -28,6 +32,8 @@ function numMaior(n1,n2){
 }
 numMaior(5,7);
 */
+
+// ----------------------------------------------------------------------------------------------------------------------------------------
 
 /* //mini projeto 3 - FizzBuzz
 // Divisível por 3 -> Fizz
@@ -51,6 +57,7 @@ function fizzBuzz(valor){
 console.log(fizzBuzz(true));
 */
 
+// ----------------------------------------------------------------------------------------------------------------------------------------
 
  /* //mini projeto 4 - medidor de velocidade
 //Velocidade máxima: 70km/h
@@ -73,6 +80,8 @@ function verificarVelocidade(vel){
 verificarVelocidade(60);
 */
 
+// ----------------------------------------------------------------------------------------------------------------------------------------
+
 /* //mini projeto 5 - par ou ímpar
 //função que recebe um valor limite, avalia cada número até o valor e retorna PAR ou ÍMPAR para cada caso
 function exibirTipo(valor){
@@ -85,6 +94,8 @@ function exibirTipo(valor){
 }
 exibirTipo(4)
 */
+
+// ----------------------------------------------------------------------------------------------------------------------------------------
 
 /* //mini projeto 6 - criar uma função que recebe um obj como parâmetro e exibe apenas as propriedades que são strings
 let game = {
@@ -107,6 +118,8 @@ function exibirPropriedades(obj){
 exibirPropriedades(game);
 */
 
+// ----------------------------------------------------------------------------------------------------------------------------------------
+
 /*// mini projeto 7 - criar uma função que recebe um valor e soma todos os multiplos de 3 e 5 até aquele valor
 function soma(valor){
     let soma = 0;
@@ -119,6 +132,7 @@ function soma(valor){
 console.log(soma(10));
 */
 
+// ----------------------------------------------------------------------------------------------------------------------------------------
 
 /* // mini projeto 8 - criar uma função que calcula a média de notas a partir de um array
 // 0-59: F; 60 - 69: D; 70 - 79: C; 80 - 89: B; 90 - 100: A
@@ -140,6 +154,8 @@ function mediaDoAluno(notas){
 console.log(mediaDoAluno(listaNotas));
 */
 
+// ----------------------------------------------------------------------------------------------------------------------------------------
+
 /* // mini projeto 9 - exibir asteriscos
 //criar uma função para exibir * por linha, a depender do parametro passado
 
@@ -152,6 +168,8 @@ function exibirAsteriscos(linha){
 }
 exibirAsteriscos(10);
 */
+
+// ----------------------------------------------------------------------------------------------------------------------------------------
 
 /* // mini projeto 10 - criar uma função que recebe um valor e lista os números primos até aquele valor
 function numerosPrimos(valor){
@@ -170,4 +188,182 @@ function numerosPrimos(valor){
 numerosPrimos(2);
 */
 
+// ----------------------------------------------------------------------------------------------------------------------------------------
 
+/* // mini projeto 11 - criar um objeto contendo as propriedades Rua, Cidade, Cep, e uma função exibirEndereco(endereco) que recebe
+// um obj e exibe suas propriedades (creio que seria interessante um método do obj que já fizesse isso...)
+function criaEndereco(rua, cidade, cep){
+    return {
+        rua,
+        cidade,
+        cep,
+        //exibirEndereco () {  //testando um método para exibir as propriedades
+        //    console.log(rua, cidade, cep);
+        //}
+    }
+}
+
+function exibirEndereco(endereco){
+    for(let chave in endereco){
+        console.log(chave,endereco[chave]);
+    }
+}
+
+let novoEndereco = criaEndereco('XV de Novembro', 'Rio Preto', 15000000);
+exibirEndereco(novoEndereco);
+//console.log(novoEndereco.exibirEndereco());  //testando o método para exibir
+*/
+
+// ----------------------------------------------------------------------------------------------------------------------------------------
+
+/* // mini projeto 12 - comparação de objetos
+// criar uma função para comparar os valores das propriedades de dois objetos
+// criar outra função para compara os endereços de memória de dois objetos
+
+//primeiramente irei definir uma Constructor Function (e depois comparar se tem diferença com uma Factory Function)
+
+function Endereco(rua, cidade, cep){
+    this.rua = rua,
+    this.cidade = cidade,
+    this.cep = cep
+}
+
+function propriedadesIguais(obj1, obj2){
+    if (Object.keys(obj1).length != Object.keys(obj2).length){
+        return false; //os objetos possuem uma quantidade diferente de propriedades, portanto são diferentes, assim podemos sair da função retornando false
+    }
+    for (let chave in obj1){
+        if (obj1[chave]!==obj2[chave]){
+            return false;
+        }
+    }
+    return true; //se chegou até aqui é pq tem o msm número de propriedades e todas são iguais
+}
+
+let endereco1 = new Endereco('XV de Novembro', 'RP', 15000000);
+let endereco2 = new Endereco('XV de Novembro', 'RP', 15000000);
+// endereco2.bairro = 'São Francisco'; //adicionando uma nova propriedade
+//console.log(endereco2);
+//console.log(propriedadesIguais(endereco1,endereco2));
+
+let end1 = criaEndereco('XV de Novembro', 'RP', 15000000); //função definida na atividade 11 (linha 195)
+let end2 = criaEndereco('XV de Novembro', 'RP', 15000000);
+//end2.bairro = 'São Francisco';
+console.log(propriedadesIguais(end1,end2)); // OK, então a comparação atributo-a-atributo funciona independente da forma com que o objeto é instanciado
+
+function endMemoriaIguais(obj1, obj2){
+    return obj1 === obj2; //qdo fazemos a comparação estrita dos objetos estamos comparando seus endereços de mem., pois eles foram criados em end. diferentes. Objs armazenam end de memória de suas propriedades (funcionam como ponteiros)
+}
+
+console.log(endMemoriaIguais(end1,end2));
+*/ 
+
+// ----------------------------------------------------------------------------------------------------------------------------------------
+
+/* // mini projeto 13 - criar o obj de postagem de blog com as propriedades estabelecidas
+function criaPostagem(titulo, mensagem, autor, visualizacoes, comentarios, aoVivo){
+    return {
+        titulo,
+        mensagem,
+        autor,
+        visualizacoes,
+        comentarios,
+        aoVivo
+    }
+}
+
+let novaPostagem = criaPostagem('Testando', 'Msg de teste', 'Eu mesmo', 32, [{autor : 'lucas', coment : 'mtobomcara!'},{autor : 'luiz', coment : 'meohdeos q fera'}], false);
+console.log(novaPostagem);
+
+//comentário do gabarito: as propriedades comentários e aoVivo seriam "dinâmicas" e não seriam definidas na construção do objeto,
+//assim podemos fazer uma função construtora desse objeto sem esses parâmetros, definindo essas propriedades como Zero por padrão:
+function Postagem(titulo, mensagem, autor, visualizacoes){
+    this.titulo = titulo,
+    this.mensagem = mensagem,
+    this.autor = autor,
+    this.vizualizacoes = visualizacoes,
+    this.comentarios = [],
+    this.aoVivo = false
+}
+*/
+
+// ----------------------------------------------------------------------------------------------------------------------------------------
+
+/* //mini projeto 14 - faixa de preços
+// criar um array de objetos de faixas de preços, contendo das propriedades: toolTip, min, max
+
+function Faixa(toolTip, minimo, maximo){
+    this.toolTip = toolTip,
+    this.minimo = minimo,
+    this.maximo = maximo
+}
+
+let faixas = [
+    new Faixa('até 700', 0, 700), 
+    new Faixa('até 1000', 700, 1000), 
+    new Faixa('até 2000', 1000, 2000)
+]
+console.log(faixas);
+*/
+
+// ----------------------------------------------------------------------------------------------------------------------------------------
+
+/* // Testando o método .find:
+let games = [
+    {nome : 'Horizon', console : 'PS'},
+    {nome : 'Xenoblade', console : 'Switch'},
+    {nome : 'Bom Da Guerra', console : 'PS'}
+]
+
+//const game = games.find(function(games){
+//    return games.console === 'PS';
+//})
+//usando a notação de Arrow Function:
+const game = games.find(games => games.console === 'PS');
+
+console.log(game);
+
+// testando o splice
+let lista = ['a','b','c','d'];
+lista.splice(2,1);
+console.log(lista);
+*/
+
+// ----------------------------------------------------------------------------------------------------------------------------------------
+
+// mini projeto: formulario HTML DOM
+//aproveitando pra usar switch case
+
+
+function verificaEntrada(){
+    let nome = document.getElementById('nome').value;
+    let convite = document.getElementById('convite').value;
+    switch (convite){
+        case 'Jhonathan': //pessoa que convidou
+            switch (nome){ //convidados dessa pessoa
+                case 'Luiz':
+                case 'Carlos':
+                    document.getElementById("resultado").innerHTML = "Você pode entrar!";
+                    break;
+                default:
+                    document.getElementById("resultado").innerHTML = "Você NÃO pode entrar!";
+            }
+        case 'Douglas': //pessoa que convidou
+            switch (nome){ //convidados dessa pessoa
+                case 'José':
+                    document.getElementById("resultado").innerHTML = "Você pode entrar!";
+                    break;
+                default:
+                    document.getElementById("resultado").innerHTML = "Você NÃO pode entrar!";
+            }
+        case 'Eduardo': //pessoa que convidou
+            switch (nome){ //convidados dessa pessoa
+                case 'Maria':
+                case 'Filomena':
+                    document.getElementById("resultado").innerHTML = "Você pode entrar!";
+                    break:
+                default:
+                    document.getElementById("resultado").innerHTML = "Você NÃO pode entrar!";
+            }
+    }
+}
