@@ -371,7 +371,7 @@ function verificaEntrada(){
             document.getElementById('resultado').innerHTML = "Você NÃO pode entrar!";
     } */
 
-    let listaConvidades = {
+    let listaConvidades = {   //objeto no formato quemConvidou : listaDeConvidados
         Jonatan : ['Luiz', 'Carlos'],
         Douglas : ['José'],
         Eduardo : ['Maria', 'Filomena']

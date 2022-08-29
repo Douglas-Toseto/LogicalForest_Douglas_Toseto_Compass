@@ -32,37 +32,37 @@ describe("About Mutability", function() {
     var aPerson = new Person ("John", "Smith");
     expect(aPerson.getFullName()).toBe("John Smith");
 
-    aPerson.getFullName = function () {
+    aPerson.getFullName = function () {         //está alterando o método do objeto aPerson apenas
       return this.lastname + ", " + this.firstname;
     };
 
-    expect(aPerson.getFullName()).toBe(FILL_ME_IN);
+    expect(aPerson.getFullName()).toBe("Smith, John");
   });
 
   it("should know that variables inside a constructor and constructor args are private", function () {
     function Person(firstname, lastname)
     {
-      var fullName = firstname + " " + lastname;
+      var fullName = firstname + " " + lastname;  //fullName é uma variável local, não um atributo (seria, caso a declaração fosse this.fullName=...)
 
-      this.getFirstName = function () { return firstname; };
+      this.getFirstName = function () { return firstname; }; // métodos Getters
       this.getLastName = function () { return lastname; };
-      this.getFullName = function () { return fullName; };
+      this.getFullName = function () { return fullName; }; // get para ter acesso a var local fullName
     }
     var aPerson = new Person ("John", "Smith");
 
-    aPerson.firstname = "Penny";
+    aPerson.firstname = "Penny"; //não existia nenhum desses três atributos no obj, então eles foram inseridos agora
     aPerson.lastname = "Andrews";
-    aPerson.fullName = "Penny Andrews";
+    aPerson.fullName = "Penny Andrews"; 
 
-    expect(aPerson.getFirstName()).toBe(FILL_ME_IN);
-    expect(aPerson.getLastName()).toBe(FILL_ME_IN);
-    expect(aPerson.getFullName()).toBe(FILL_ME_IN);
+    expect(aPerson.getFirstName()).toBe("John"); // mas os getter retornam os valores dos parâmetros de criação dos obj
+    expect(aPerson.getLastName()).toBe("Smith");
+    expect(aPerson.getFullName()).toBe("John Smith");
 
-    aPerson.getFullName = function () {
-      return aPerson.lastname + ", " + aPerson.firstname;
+    aPerson.getFullName = function () {   //está alterando o método desse obj
+      return aPerson.lastname + ", " + aPerson.firstname; //está retornando os atributos (que foram criados posteriormente)
     };
 
-    expect(aPerson.getFullName()).toBe(FILL_ME_IN);
+    expect(aPerson.getFullName()).toBe("Andrews, Penny");
   });
 
 });
