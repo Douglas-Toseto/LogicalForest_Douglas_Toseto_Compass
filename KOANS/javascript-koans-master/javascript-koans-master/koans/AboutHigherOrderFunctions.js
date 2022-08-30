@@ -39,7 +39,7 @@ describe("About Higher Order Functions", function () {
     var isEven = function (item) {
       msg += (item % 2) === 0;
     };
-
+    
     _(numbers).forEach(isEven);
 
     expect(msg).toEqual("falsetruefalse");
