@@ -1,4 +1,4 @@
-
+import assert from 'assert';
 import chai from 'chai';
 
 import Calculadora from '../src/Calculadora.js';
@@ -215,10 +215,11 @@ describe('Testes de Logarítmos', ()=>{
     })
 })
 
-describe('Testes de Ordenação', ()=>{
+describe.only('Testes de Ordenação', ()=>{
     it('Teste com valores numéricos apenas: [3,1,4,2] deve resultar [1,2,3,4]',()=>{
         let resultado = Calculadora.ordena([3,1,4,2]);
-        expect(resultado).to.be.eq([1, 2, 3, 4]);
+        expect(resultado).to.be.eq([1, 2, 3, 4]);      // a comparação não confere por array ser tipo de ref?????
+        //assert.strictEqual(resultado,[1, 2, 3, 4]);
     })
     it('Teste com valores alfabéticos apenas: [Cláudio,Lucas,Daniela,Ana] deve resultar [Ana,Cláudio,Daniela,Lucas]',()=>{
         let resultado = Calculadora.ordena(['Cláudio','Lucas','Daniela','Ana']);
@@ -253,7 +254,7 @@ describe('Testes de Cosseno', ()=>{
     })
 })
 
-describe.only('Testes de Tangente', ()=>{
+describe('Testes de Tangente', ()=>{
     it('Teste tangente de 0 rad: deve resultar 0',()=>{
         let resultado = Calculadora.tang(0);
         expect(resultado).to.be.eq(0);
