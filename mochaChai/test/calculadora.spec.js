@@ -60,7 +60,7 @@ describe('Testes de Subtração', () => {
     })
     it('Teste subtração com decimais: 10.125 com 12.642 deve resultar -2.517', ()=>{ 
         let resultado = Calculadora.sub(10.125, 12.642);
-        expect(resultado).to.be.eq(-2.5169999999999995);   // operações com decimais em JS não são precisas. https://www.w3schools.com/js/js_numbers.asp
+        expect(resultado).to.be.eq(-2.517);   // operações com decimais em JS não são precisas. https://www.w3schools.com/js/js_numbers.asp
     })                                          // considerando as particularidades do JS, o valor esperado deve ser -2.5169999999999995 ao invés de -2.517
 
 })
@@ -169,11 +169,17 @@ describe('Testes de Raizes', ()=>{
     })
     it('Teste radicando inteiro neg. e índice ímpar: raíz cúbica de -27 deve resultar em -3', ()=>{
         let resultado = Calculadora.sqr(-27,3);
-        expect(resultado).to.be.eq(-3);             //NOTA sobre JS: bases negativas com expoentes fracionários sempre retornam NaN, então Math não deve ser suficiente para calcular raíz desses números
+        expect(resultado).to.be.eq('indeterminado');             //NOTA sobre JS: bases negativas com expoentes fracionários sempre retornam NaN, então Math não deve ser suficiente para calcular raíz desses números
     })                                              // https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Math/pow
+                                                    // considerando essa caractarística da linguagem, não serão calculadas raízes de números negativos
     it('Teste radicando inteiro pos. e índice 0: indeterminação', ()=>{
         let resultado = Calculadora.sqr(169,0);
         expect(resultado).to.be.eq(Infinity);  //169^(1/0) retorna Infinity, mas acredito que seria melhor tratar esse caso na Classe
+    })
+
+    it('Teste de índice negativo',()=>{         //não é usual, mas raiz é exp fracionário, então nada impede disso ocorrer
+        let resultado = Calculadora.sqr(16,-2);
+        expect(resultado).to.be.eq(0.25);
     })
 })
 
@@ -215,19 +221,19 @@ describe('Testes de Logarítmos', ()=>{
     })
 })
 
-describe.only('Testes de Ordenação', ()=>{
+describe('Testes de Ordenação', ()=>{
     it('Teste com valores numéricos apenas: [3,1,4,2] deve resultar [1,2,3,4]',()=>{
-        let resultado = Calculadora.ordena([3,1,4,2]);
-        expect(resultado).to.be.eq([1, 2, 3, 4]);      // a comparação não confere por array ser tipo de ref?????
+        let resultado = Calculadora.ordena([3,1,4,2]);          // Testar comparação como strings
+        expect(resultado.toString()).to.be.eq("1,2,3,4");      // a comparação não confere por array ser tipo de ref?????
         //assert.strictEqual(resultado,[1, 2, 3, 4]);
     })
     it('Teste com valores alfabéticos apenas: [Cláudio,Lucas,Daniela,Ana] deve resultar [Ana,Cláudio,Daniela,Lucas]',()=>{
         let resultado = Calculadora.ordena(['Cláudio','Lucas','Daniela','Ana']);
-        expect(resultado).to.be.eq(['Ana','Cláudio','Daniela','Lucas']);
+        expect(resultado.toString()).to.be.eq("Ana,Cláudio,Daniela,Lucas");
     })
     it('Teste com valores mistos: [Cláudio,1,Daniela,12] deve resultar [1, 12, Cláudio, Daniela]',()=>{
         let resultado = Calculadora.ordena(['Cláudio',1,'Daniela',12]);
-        expect(resultado).to.be.eq([1, 12, 'Cláudio', 'Daniela']);
+        expect(resultado.toString()).to.be.eq("1,12,Cláudio,Daniela");
     })
     
 })

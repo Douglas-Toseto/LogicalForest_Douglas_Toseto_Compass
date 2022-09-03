@@ -29,9 +29,15 @@ export default class Calculadora {
     }
 
     static sqr(a,b){ //no obj global Math não há um método para raíz de índice qualquer, apenas para raiz quadrada. Esse método aqui tem a forma sqr(radicando, índice)
+        /*
         if (b%2!==0 || a>=0){ //se o índice é impar ou a>=0, ok
             return Math.pow(a,1/b);
         } else { // caiu aqui pq b par e a neg
+            return 'indeterminado'
+        } */
+        if (a>=0){
+            return Math.pow(a,1/b);
+        } else {
             return 'indeterminado'
         }
     }
@@ -59,7 +65,7 @@ export default class Calculadora {
 
     static ordena(vetor){
         /*
-        for (var i = 0; i < vetor.length; i++) {  //bubble sort
+        for (var i = 0; i < vetor.length; i++) {                //bubble sort
             for (var j = 0; j < (vetor.length - i - 1); j++) { 
                 if(vetor[j] > vetor[j+1]) {
                     var tmp = vetor[j]; 
