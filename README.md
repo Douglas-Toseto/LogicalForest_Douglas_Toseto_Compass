@@ -1,32 +1,63 @@
-# :computer: Challenge Sprint 4 :computer:
+<center> # :computer: Challenge Sprint 4 :computer: </center>
 ![Template de Apresentação!](/assets/template.png)
 
 
-#### Autor:
-Douglas Toseto Marçal de Oliveira
+### Objetivos da Sprint:
+- Estudar os seguintes temas:
+    - **Git** e **Github** para versionamento e de arquivos,
+    - Linguagem de programação **JavaScript**,
+    - Utilizar o **KoansJS** para aprendizado de JavaScript e da sintaxe das bibliotecas de testes,
+    - Conceitos de **TDD**,
+    - Bibliotecas **Mocha** e **Chai**.
 
-#### Agradecimentos:
-Agradeço aos colegas de trilha pelas conversas e dicas, em especial ao Eduardo e ao Nosvaldo pelos bate-papos em busca de erros no código.
+- Realizar atividades práticas relacionadas a JavaScript (mini-projetos) e a testes (calculadora).
+- Organizar um repositório.
+### Dependências/Recursos necessários:
+Para a realização das atividades propostas, foram necessários os seguintes recursos:
 
-#### Referências:
-- Sobre Git/GitHub:
-    - Vídeos da Rafaela Ballerini sobre Git/GitHub:
-        - [O QUE É GIT E GITHUB? - definição e conceitos importantes 1/2](https://youtu.be/DqTITcMq68k)
-        - [COMO USAR GIT E GITHUB NA PRÁTICA! - desde o primeiro commit até o pull request! 2/2](https://youtu.be/UBAX-13g8OM)
+- [Node.Js](https://nodejs.org/en/)
+
+- Biblioteca Underscore.Js:
+```bash
+npm install underscore
+```
+
+- Biblioteca Mocha:
+```bash
+npm install --global mocha
+```
+
+- Biblioteca Chai:
+```bash
+npm install chai
+```
+- Extensão Live Server do VS Code
+
+
+___
+### Execução dos testes
+Para elaboração e execução dos testes da classe `Calculadora.js` foram utilizadas as libs Mocha e Chai. A descrição dos testes está em `calculadora.spec.js`. Para executá-los, utilize o comando:
+```bash
+npm test
+```
+
+
+### Referências:
+- **Sobre Git/GitHub:**
+    - [O QUE É GIT E GITHUB? - definição e conceitos importantes 1/2](https://youtu.be/DqTITcMq68k "Vídeo da Rafaela Ballerini sobre Git/GitHub")
+    - [COMO USAR GIT E GITHUB NA PRÁTICA! - desde o primeiro commit até o pull request! 2/2](https://youtu.be/UBAX-13g8OM "Vídeo da Rafaela Ballerini sobre Git/GitHub:")
     - [Documentação GIT](https://git-scm.com/docs/git/pt_BR)
-    - Vídeo do Jhonatan, do canal DevAprender, sobre GIT:
-        - [Curso de Git e Github COMPLETO 2021 [Iniciantes] + Desafios + Muita Prática](https://youtu.be/kB5e-gTAl_s)
+    - [Vídeo: Curso de Git e Github COMPLETO 2021 [Iniciantes] + Desafios + Muita Prática](https://youtu.be/kB5e-gTAl_s "Vídeo do Jhonatan, do canal DevAprender, sobre GIT")
     - [Artigo: Geek Hunter - Comandos Git mais utilizados](https://blog.geekhunter.com.br/comandos-git-mais-utilizados/)
     - [Video: How To Create Beautiful and Useful ReadMe Documents For GitHub](https://youtu.be/a8CwpGARAsQ)
     - [Vídeo: Como fazer um README para portfolio no Github, do canal DevSuperior](https://youtu.be/jIa8R69pKh8)
 
-- Sobre Markdown:
+- **Sobre Markdown:**
     - [Documentação Markdown](https://www.markdownguide.org/cheat-sheet)
     - [Vídeo: Dicionário do programador - Markdown](https://youtu.be/gFJfyHRKaE0)
 
-- Sobre JavaScript:
-    - Vídeo do Jhonatan, do canal DevAprender, sobre JS:
-        - [Curso Javascript Completo 2020 [Iniciantes] + 14 Mini-Projetos](https://youtu.be/i6Oi-YtXnAU)
+- **Sobre JavaScript:**
+    - [Vídeo: Curso Javascript Completo 2020 [Iniciantes] + 14 Mini-Projetos](https://youtu.be/i6Oi-YtXnAU "Vídeo do Jhonatan, do canal DevAprender, sobre JS")
     - [Artigo: Medium - Simple Explanation of Objects and Memory References in JavaScript](https://medium.com/dev-proto/simple-explanation-of-objects-and-memory-references-in-javascript-1b2310c36c31)
     - [Artigo: Objetos - Referências de valores em JavaScript](https://blog.da2k.com.br/2017/01/25/objetos-referencias-de-valores-em-javascript/)
     - [Artigo: MDN Web Docs - Math](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Math)
@@ -43,3 +74,12 @@ Agradeço aos colegas de trilha pelas conversas e dicas, em especial ao Eduardo 
 - [Documentação Chai](https://www.chaijs.com)
 
 - [Artigo: Bubble Sort: o que é e como usar? Exemplos práticos!](https://blog.betrybe.com/tecnologia/bubble-sort-tudo-sobre/)
+- [KoansJS](https://github.com/othneildrew/Best-README-Template/blob/master/README.md)
+
+### Agradecimentos:
+Agradeço aos colegas de trilha pelas conversas e dicas, em especial ao Eduardo e ao Nosvaldo pelos bate-papos em busca de erros no código.
+Agradeço também à Larissa, pela paciência com as dúvidas!
+
+### Autor:
+Douglas Toseto Marçal de Oliveira
+Contato: [LinkedIn](https://www.linkedin.com/in/douglas-toseto/ )
