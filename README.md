@@ -81,7 +81,7 @@ npm test
 - [Documentação Chai](https://www.chaijs.com)
 
 - [Artigo: Bubble Sort: o que é e como usar? Exemplos práticos!](https://blog.betrybe.com/tecnologia/bubble-sort-tudo-sobre/)
-- [KoansJS](https://github.com/othneildrew/Best-README-Template/blob/master/README.md)
+- [KoansJS](https://github.com/mrdavidlaing/javascript-koans)
 
 
 
@@ -91,10 +91,12 @@ Distribuido sob a licença [MIT](LICENSE).
 
 ### :ribbon: Agradecimentos:
 Agradeço aos colegas de trilha pelas conversas e dicas, em especial ao Eduardo e ao Nosvaldo pelos bate-papos em busca de erros no código.
+
 Agradeço também à Larissa, pela paciência com as dúvidas!
 
 
 
 ### :baby: Autor:
 Douglas Toseto Marçal de Oliveira
+
 Contato: [LinkedIn](https://www.linkedin.com/in/douglas-toseto/ )
