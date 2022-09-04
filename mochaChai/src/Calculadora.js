@@ -80,28 +80,42 @@ export default class Calculadora {
     }
 
     static seno(valor){
-        return Math.sin(valor);
+        let vsen = Math.sin(valor);             
+        if (Math.abs(vsen)<0.000000000000001){  
+            return 0;
+        } else {
+            return vsen;
+        }
     }
 
     static cos(valor){
-        return Math.cos(valor);
+        let cosseno = Math.cos(valor);              //IF para "forçar" o retorno que deveria, pois mesmo com lib externa esse fenômeno acontece
+        if (Math.abs(cosseno)<0.000000000000001){  // pois o cos(Pi/2) retorna um valor muito próx. de Zero: 6.123233995736766e-17, e não exatamente zero como deveria
+            return 0;
+        } else {
+            return cosseno;
+        }
     }
 
     static tang(valor){
-        /*
-        if (Math.cos(valor)!==0){
-            return Math.sin(valor)/Math.cos(valor);   // como cos(PI/2) não é exatamente zero segundo os cálculos do JS, acontece esse problema [a tg(90º) pode ser calculada]
-        } else {                                        // para validar corretamente, o valor deve ser diferente dos múltiplos de PI/2
-            return 'indefinido';
-        } */
-
-
+        /* //essa função funciona no Python, mas aqui no JS não funcionou nem com a lib Decimal.js
         let aux = valor % (Math.PI/2);
         if (aux % 2 !== 0){           //o valor não pode ser "múltiplo ímpar" de PI/2, ie, não pode ser PI/2, 3PI/2, 5PI/2 ...
             return 'indefinido';
         } else {                                      
             return Math.sin(valor)/Math.cos(valor);   
-        } 
+        } */ 
+
+        // método para avaliar o retorno com base num valor limite (pois, por ex, tan(PI/2) está retornando um valor alto, ao invés de infinito
+        // e tan(PI) está retornando um valor pequeno, ao invés de exatamente zero
+        let tangente = Math.tan(valor); 
+        if (tangente > 200000000000000){  //valor limite razoávelmente alto
+            return 'indefinido';
+        } else if (Math.abs(tangente) < 0.000000000000001){ //valor razoávelmente pequeno
+            return 0;
+        } else {
+            return tangente;
+        }
         
     }
 }

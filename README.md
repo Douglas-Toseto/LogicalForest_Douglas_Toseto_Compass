@@ -5,7 +5,7 @@
 
 ### :rocket: Objetivos da Sprint:
 - Estudar os seguintes temas:
-    - **Git** e **Github** para versionamento e de arquivos,
+    - **Git** e **Github** para versionamento de arquivos,
     - Linguagem de programação **JavaScript**,
     - Utilizar o **KoansJS** para aprendizado de JavaScript e da sintaxe das bibliotecas de testes,
     - Conceitos de **TDD**,

@@ -269,4 +269,8 @@ describe('Testes de Tangente', ()=>{
         let resultado = Calculadora.tang(Math.PI/2);
         expect(resultado).to.be.eq('indefinido');       
     })
+    it('Teste tangente de PI rad: deve resultar 0',()=>{
+        let resultado = Calculadora.tang(Math.PI);
+        expect(resultado).to.be.eq(0);
+    })
 })
