@@ -20,7 +20,7 @@
 Para a realização das atividades propostas, foram necessários os seguintes recursos:
 
 - [Node.Js](https://nodejs.org/en/)
-
+>
 - Biblioteca Underscore.Js:
 ```bash
 npm install underscore
@@ -35,6 +35,9 @@ npm install --global mocha
 ```bash
 npm install chai
 ```
+
+- [Visual Studio Code](https://code.visualstudio.com)
+>
 - Extensão Live Server do VS Code
 
 
