@@ -1,7 +1,13 @@
  # :computer: Challenge Sprint 4 :computer:
 ![Template de Apresentação!](/assets/template.png)
 
+[![GitHub license](https://img.shields.io/github/license/Douglas-Toseto/LogicalForest_Douglas_Toseto_Compass)](https://github.com/Douglas-Toseto/LogicalForest_Douglas_Toseto_Compass/blob/main/LICENSE) ![](https://img.shields.io/badge/-JavaScript-yellow)
 
+>
+
+Sprint 4 da trilha **Logical Forest** do programa de bolsas da Compass.UOL, cujo tema é *JavaScript e versionamento de código*.
+
+>
 
 ### :rocket: Objetivos da Sprint:
 - Estudar os seguintes temas:
@@ -14,7 +20,7 @@
 - Realizar atividades práticas relacionadas a JavaScript (mini-projetos) e a testes (calculadora).
 - Organizar um repositório.
 
-
+>
 
 ### :coffee: Dependências/Recursos necessários:
 Para a realização das atividades propostas, foram necessários os seguintes recursos:
@@ -40,7 +46,7 @@ npm install chai
 >
 - Extensão Live Server do VS Code
 
-
+>
 
 ### :cd: Execução dos testes
 Para elaboração e execução dos testes da classe `Calculadora.js` foram utilizadas as libs Mocha e Chai. A descrição dos testes está em `calculadora.spec.js`. Para executá-los, utilize o comando:
@@ -48,7 +54,7 @@ Para elaboração e execução dos testes da classe `Calculadora.js` foram utili
 npm test
 ```
 
-
+>
 
 ### :books: Referências:
 - **Sobre Git/GitHub:**
@@ -86,18 +92,19 @@ npm test
 - [Artigo: Bubble Sort: o que é e como usar? Exemplos práticos!](https://blog.betrybe.com/tecnologia/bubble-sort-tudo-sobre/)
 - [KoansJS](https://github.com/mrdavidlaing/javascript-koans)
 
-
+>
 
 ### :key: Licença:
 Distribuido sob a licença [MIT](LICENSE).
 
+>
 
 ### :ribbon: Agradecimentos:
 Agradeço aos colegas de trilha pelas conversas e dicas, em especial ao Eduardo e ao Nosvaldo pelos bate-papos em busca de erros no código.
 
 Agradeço também à Larissa, pela paciência com as dúvidas!
 
-
+>
 
 ### :baby: Autor:
 Douglas Toseto Marçal de Oliveira
