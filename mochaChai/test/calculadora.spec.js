@@ -35,34 +35,38 @@ describe('Testes de Soma', () => {
 
 describe('Testes de Subtração', () => {
     it('Teste subtração de dois inteiros positivos: 7 com 3 deve resultar 4', ()=>{ 
-        let resultado = Calculadora.sub(7, 3);
+        let resultado = Calculadora.sub2(7, 3);
         expect(resultado).to.be.eq(4);
     })
     it('Teste subtração de dois inteiros positivos: 3 com 7 deve resultar -4', ()=>{ 
-        let resultado = Calculadora.sub(3, 7);
+        let resultado = Calculadora.sub2(3, 7);
         expect(resultado).to.be.eq(-4);
     })
     it('Teste subtração de inteiro positivo com negativo: 5 com -4 deve resultar 9', ()=>{ 
-        let resultado = Calculadora.sub(5, -4);
+        let resultado = Calculadora.sub2(5, -4);
         expect(resultado).to.be.eq(9);
     })
     it('Teste subtração de inteiro negativo com positivo: -5 com 4 deve resultar -9', ()=>{ 
-        let resultado = Calculadora.sub(-5, 4);
+        let resultado = Calculadora.sub2(-5, 4);
         expect(resultado).to.be.eq(-9);
     })
     it('Teste subtração de inteiros negativos: -6 com -7 deve resultar 1', ()=>{ 
-        let resultado = Calculadora.sub(-6, -7);
+        let resultado = Calculadora.sub2(-6, -7);
         expect(resultado).to.be.eq(1);
     })
     it('Teste subtração com elemento neutro: 0 com 5 deve resultar -5', ()=>{ 
-        let resultado = Calculadora.sub(0, 5);
+        let resultado = Calculadora.sub2(0, 5);
         expect(resultado).to.be.eq(-5);
     })
     it('Teste subtração com decimais: 10.125 com 12.642 deve resultar -2.517', ()=>{ 
-        let resultado = Calculadora.sub(10.125, 12.642);
+        let resultado = Calculadora.sub2(10.125, 12.642);
         expect(resultado).to.be.eq(-2.517);   // operações com decimais em JS não são precisas. https://www.w3schools.com/js/js_numbers.asp
     })                                          // considerando as particularidades do JS, o valor esperado deve ser -2.5169999999999995 ao invés de -2.517
 
+    it('Teste subtração com qtde diferente de casas decimais: 2.75 com 7.1236 deve resultar -4.3736', ()=>{ 
+        let resultado = Calculadora.sub2(2.75, 7.1236);
+        expect(resultado).to.be.eq(-4.3736);
+    })
 })
 
 describe('Testes de Multiplicação', () => {

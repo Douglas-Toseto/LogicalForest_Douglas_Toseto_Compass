@@ -4,9 +4,39 @@ export default class Calculadora {
         return a+b;
     }
 
-    static sub(a, b){
-        return a-b;
+    static sub(a,b){ //Não encontrei métodos nativos que separam as partes decimais de um número, então fiz toda essa volta enorme pra chegar ao resultado
+        let casas = 1;   // até existe um método de arredondamento decimal, mas é necessário pré-definir a quantidade de casas: https://www.w3schools.com/jsref/jsref_toprecision.asp
+        let num1 = a;
+        let num2 = b;
+        if (!Number.isInteger(a)){  //se os valores de entrada não forem inteiros, faz o tratamento decimal
+            num1 = a.toString(); //converte os valores de entrada para string
+            let decimal1 = num1.split(".")[1]; //separamos a parte decimal
+            casas = decimal1.length;
+        }
+        if (!Number.isInteger(b)){
+            num2 = b.toString(); 
+            let decimal2 = num2.split(".")[1];
+            casas = Math.max(casas, decimal2);
+        }
+        return (Number(num1)*Math.pow(10,casas)-Number(num2)*Math.pow(10,casas))/Math.pow(10,casas); //Não deu certo... ao dividir ocorrer os tramites decimais e voltam as trocentas casas ><""  
     }
+
+    static sub2(a,b){   //Vou usar o método .toPrecision
+        let casas = 1;
+        if (!Number.isInteger(a)){  // se o número não for inteiro, descubro quantas casas decimais ele possui para usar como parâmetro 
+            let num1 = a.toString();
+            let decimal1 = num1.split(".")[1];
+            casas = decimal1.length;
+        }
+        if (!Number.isInteger(b)){
+            let num2 = b.toString();
+            let decimal2 = num2.split(".")[1];
+            casas = Math.max(casas, decimal2.length);
+        }
+        let resultado = a-b;
+                
+        return Number(resultado.toPrecision(casas+1));
+      }
 
     static mult(a, b){
         return a*b;     
